@@ -18,3 +18,4 @@ CodeVault, yazılımcıların sık kullandıkları kod parçacıklarını (snipp
 - **Dil:** TypeScript
 - **Stil:** Tailwind CSS
 - **Araçlar:** React-Toastify
+<img width="1920" height="1080" alt="Ekran görüntüsü 2026-03-05 142151" src="https://github.com/user-attachments/assets/fcc9265b-7575-4939-bc19-d100840bfa01" />
