@@ -17,9 +17,7 @@ export default function SnippetList() {
                     }}
                     className="group relative flex items-center justify-center gap-2  bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-bold px-6 py-2.5 rounded-xl shadow-[0_4px_14px_0_rgba(79,70,229,0.39)] hover:shadow-[0_6px_20px_rgba(79,70,229,0.23)] transition-all duration-300 ase-in-out active:scale-95 cursor-pointer overflow-hidden"
                 >
-                    {/* Parlama Efekti (Hover'da üzerinden geçer) */}
                     <span className="absolute inset-0 w-full h-full bg-linear-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></span>
-                    {/* İkon */}
                     <span className="text-lg group-hover:rotate-90 transition-transform duration-300">+</span>
                     <span>Kod Ekle</span>
                 </button>
