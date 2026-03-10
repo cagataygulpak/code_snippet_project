@@ -9,9 +9,9 @@ export default function ConfirmModal() {
 
     const handleConfirm = () => {
         if (modalConfig.type === "delete") {
-            deleteSnippet(modalConfig.data as string); // Silme için ID gönderir
+            deleteSnippet(modalConfig.data as string); 
         } else if (modalConfig.type === "update") {
-            updateSnippet(modalConfig.data as Snippet); // Güncelleme için tam Snippet objesini gönderir
+            updateSnippet(modalConfig.data as Snippet); 
         }
         setModalConfig({ isOpen: false, type: "", data: null });
     };
