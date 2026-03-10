@@ -3,7 +3,6 @@ import { useState } from "react";
 import { useSnippets } from "../context/SnippetContext";
 
 export default function Workspace() {
-    // 1. DÜZELTME: setModalConfig fonksiyonunu buradan içeri alıyoruz
     const { languages, activeSnippet, isCreating, addSnippet, setActiveSnippet, setIsCreating, setModalConfig } = useSnippets();
     const [formData, setFormData] = useState({
         title: activeSnippet ? activeSnippet.title : "",
@@ -11,7 +10,6 @@ export default function Workspace() {
         code: activeSnippet ? activeSnippet.code : "",
     });
 
-    // Formda değişiklik var mı kontrolü
     const hasChanges = isCreating ? true : (
         activeSnippet && (
             formData.title !== activeSnippet.title ||
@@ -23,15 +21,13 @@ export default function Workspace() {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         if (isCreating) {
-            // 2. DÜZELTME: tags: [] ekleyerek tip hatasını çözüyoruz
             addSnippet({
                 title: formData.title,
                 language: formData.language,
                 code: formData.code,
-                tags: [] // TypeScript artık mutlu :)
+                tags: []
             });
         } else if (activeSnippet) {
-            // Güncelleme için modalı tetikliyoruz
             setModalConfig({
                 isOpen: true,
                 type: "update",
@@ -64,7 +60,6 @@ export default function Workspace() {
                     {!isCreating && activeSnippet && (
                         <button
                             type="button"
-                            // SİLME BUTONUNU DA MODALA BAĞLIYORUZ
                             onClick={() => setModalConfig({
                                 isOpen: true,
                                 type: "delete",
