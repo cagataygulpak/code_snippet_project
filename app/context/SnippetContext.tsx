@@ -42,11 +42,9 @@ export function SnippetProvider({ children }: { children: React.ReactNode }) {
         data: null
     });
 
-    // Hydration hatasını önlemek için "Bileşen yüklendi mi?" kontrolü
     const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
-        // Tarayıcı tarafında olduğumuzdan emin olduktan sonra verileri çekiyoruz
         const localSnippets = localStorage.getItem("snippets");
         if (localSnippets) setSnippets(JSON.parse(localSnippets));
 
@@ -59,7 +57,6 @@ export function SnippetProvider({ children }: { children: React.ReactNode }) {
             localStorage.setItem("languages", JSON.stringify(initial));
         }
 
-        // Uygulama tarayıcıda hazır
         setIsMounted(true);
     }, []);
 
@@ -110,7 +107,6 @@ export function SnippetProvider({ children }: { children: React.ReactNode }) {
         toast.error(`"${lang}" listeden kaldırıldı.`);
     };
 
-    // Eğer bileşen henüz tarayıcıda yüklenmediyse render'ı beklet (Hydration Fix)
     if (!isMounted) {
         return null;
     }
